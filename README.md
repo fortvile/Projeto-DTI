@@ -68,7 +68,7 @@ Swagger: http://localhost:5206/swagger
 
 Exemplo de POST /api/Leads (⚠️ não inclua id nem dateCreated):
 
-Copie esse json e coloca no try out do Swagger
+Copie esse json e coloca no try out do Swagger.
 
 {
   "category": "Dev ;)",
