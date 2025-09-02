@@ -60,8 +60,8 @@ dotnet run --project DTI.Api
 
 
 API: http://localhost:5206/api/Leads
-
 Swagger: http://localhost:5206/swagger
+(No caso do meu computador, o Kestrel escolheu a porta 5206 para rodar a aplicação, para forçar que a aplicação suba na porta 5206 use "dotnet run --project DTI.Api --urls "http://localhost:5206")
 
 🧪 Testando no Swagger
 
@@ -119,6 +119,7 @@ npm start
 
 
 App disponível em: http://localhost:3000
+(O react usa como porta padrão a 3000)
 
 Aba Invited → lista leads status = "Pendente".
 
