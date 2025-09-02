@@ -22,11 +22,10 @@ Projeto fullstack simples para gerenciar **leads** com abas **Invited** e **Acce
 
 ---
 
-## 🗄️ Banco de Dados (Connection String)
+⚙️ Configuração do Banco de Dados
 
-Arquivo: `backend/DTI.Api/appsettings.json`
+Arquivo: backend/DTI.Api/appsettings.json
 
-```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=DTI;Trusted_Connection=True;TrustServerCertificate=True;"
@@ -36,36 +35,35 @@ Arquivo: `backend/DTI.Api/appsettings.json`
   },
   "AllowedHosts": "*"
 }
-👉 Ajuste o Server= conforme sua instância:
 
-Server=localhost\\SQLEXPRESS (SQL Server Express)
 
-Server=localhost (SQL Server Developer / Full)
+👉 Ajuste o Server= conforme sua instância do SQL Server:
 
-Server=(localdb)\\MSSQLLocalDB (LocalDB)
+Server=localhost\\SQLEXPRESS → SQL Server Express
+
+Server=localhost → SQL Server Developer / Full
+
+Server=(localdb)\\MSSQLLocalDB → LocalDB
 
 🚀 Rodando o Backend
 1) Restaurar e compilar
-bash
-
 cd backend
 dotnet build
+
 2) Criar/atualizar banco com EF
-bash
-
 dotnet ef database update -p DTI.Infrastructure -s DTI.Api
-3) Subir a API
-bash
 
+3) Subir a API
 dotnet run --project DTI.Api
+
+
 API: http://localhost:5206/api/Leads
 
 Swagger: http://localhost:5206/swagger
 
 🧪 Testando no Swagger
-Exemplo de POST /api/Leads (não inclua id nem dateCreated):
 
-json
+Exemplo de POST /api/Leads (⚠️ não inclua id nem dateCreated):
 
 {
   "category": "Dev ;)",
@@ -79,7 +77,9 @@ json
   "suburb": "BH",
   "status": "Pendente"
 }
+
 Endpoints principais
+
 GET /api/Leads → todos
 
 GET /api/Leads?status=Pendente → convidados
@@ -92,14 +92,13 @@ PUT /api/Leads/{id}/accept → aceita (aplica desconto e cria notificação .txt
 
 PUT /api/Leads/{id}/decline → recusa
 
-Notificações ficam em:
+📂 Notificações ficam em:
 backend/DTI.Api/Notifications/*.txt
 
 🎨 Frontend (React)
 1) Configurar API base
-Arquivo: frontend/src/services/api.js
 
-javascript
+Arquivo: frontend/src/services/api.js
 
 import axios from "axios";
 
@@ -108,25 +107,23 @@ const api = axios.create({
 });
 
 export default api;
-2) Instalar dependências e rodar
-bash
 
+2) Instalar dependências e rodar
 cd frontend
 npm install
 npm start
+
+
 App disponível em: http://localhost:3000
 
-Aba Invited lista leads status = "Pendente".
+Aba Invited → lista leads status = "Pendente".
 
-Botões Accept / Decline atualizam o backend.
+Botões Accept / Decline → atualizam o backend.
 
-Aba Accepted lista leads aceitos (com extras: nome completo, telefone, email).
+Aba Accepted → lista leads aceitos (com extras: nome completo, telefone, email).
 
 🔧 Exemplo via cURL
-PowerShell (Windows):
-
-powershell
-
+PowerShell (Windows)
 curl -Method POST `
   -Uri "http://localhost:5206/api/Leads" `
   -Headers @{ "Content-Type" = "application/json" } `
@@ -142,10 +139,8 @@ curl -Method POST `
     \"suburb\":\"BH\",
     \"status\":\"Pendente\"
   }"
-Linux/macOS:
 
-bash
-
+Linux/macOS
 curl -X POST "http://localhost:5206/api/Leads" \
   -H "Content-Type: application/json" \
   -d '{
@@ -160,17 +155,20 @@ curl -X POST "http://localhost:5206/api/Leads" \
     "suburb":"BH",
     "status":"Pendente"
   }'
+
 ✅ Testes
+
 No diretório backend/:
 
-bash
-
 dotnet test
+
+
 Saída esperada: todos os testes aprovados.
 
 🐛 Problemas comuns
-Página React vazia: confirme que a API está rodando em http://localhost:5206 e que frontend/src/services/api.js tem baseURL: "http://localhost:5206/api".
 
-CORS / Network Error: reinicie o backend; veja se o Program.cs habilita CORS.
+Página React vazia → confirme que a API está rodando em http://localhost:5206 e que frontend/src/services/api.js aponta para baseURL: "http://localhost:5206/api".
 
-404 em / do backend: a API não tem página HTML em /, use /swagger ou /api/Leads.
+CORS / Network Error → reinicie o backend; veja se o Program.cs habilita CORS.
+
+404 em / → a API não tem página HTML em /, use /swagger ou /api/Leads.
