@@ -1,42 +1,46 @@
-DTI — Leads (Invited / Accepted)
+# DTI — Leads (Invited / Accepted)
 
-Projeto full-stack simples para gerenciar leads com abas Invited e Accepted.
+Projeto fullstack simples para gerenciar **leads** com abas **Invited** e **Accepted**.
 
-Backend: .NET 8 (ASP.NET Core Web API) + SQL Server + EF Core
+- **Backend**: .NET 8 (ASP.NET Core Web API) + **SQL Server** + **EF Core**
+- **Frontend**: React (CRA) + CSS puro
+- **Testes**: xUnit (+ EFCore InMemory)
+- **Regras de negócio**:
+  - **Accept**: muda status para **Aceito**; se `price > 500`, aplica **10% de desconto**; registra notificação "fake email" em arquivo `.txt`.
+  - **Decline**: muda status para **Recusado**.
 
-Frontend: React (CRA) + CSS puro
+---
 
-Testes: xUnit (EFCore InMemory)
+## 📂 Estrutura de Pastas
 
-Regras:
-
-Accept: muda status para Aceito; se price > 500, aplica 10% de desconto; registra “fake e-mail” em arquivo .txt.
-
-Decline: muda status para Recusado.
-
-Arquitetura & Pastas
 DTI/
 ├─ backend/
-│  ├─ DTI.Api/            # Web API (controllers, Program.cs, Swagger, Notifications/)
-│  ├─ DTI.Domain/         # Entidades (Lead)
-│  ├─ DTI.Infrastructure/ # DbContext, EF Core, Migrations
-│  └─ DTI.Tests/          # Testes xUnit
-└─ frontend/              # React (CRA)
+│ ├─ DTI.Api/ # Web API (controllers, Program.cs, Swagger)
+│ ├─ DTI.Domain/ # Entidades (Lead)
+│ ├─ DTI.Infrastructure # DbContext, EF Core, Migrations
+│ └─ DTI.Tests/ # Testes xUnit
+└─ frontend/ # React (CRA)
 
-Pré-requisitos
+yaml
+Copiar código
 
-.NET 8 SDK — dotnet --version ≥ 8
+---
 
-Node 18+ e npm — node -v
+## ⚙️ Pré-requisitos
 
-SQL Server (Express / LocalDB / Developer / Full)
+- **.NET 8 SDK** (`dotnet --version` >= 8)
+- **Node 18+** (`node -v`) e **npm**
+- **SQL Server** (Express, LocalDB, Developer ou Full)
 
-Windows + OneDrive: se notar erros de rede/porta, execute o projeto fora do OneDrive.
+⚠️ **Importante**: se você estiver usando **OneDrive**, evite rodar o projeto dentro dele (pode causar bloqueio de portas). Se der erro de rede, mova a pasta para fora do OneDrive.
 
-Banco de Dados (Connection String)
+---
 
-Arquivo: backend/DTI.Api/appsettings.json
+## 🗄️ Banco de Dados (Connection String)
 
+Arquivo: `backend/DTI.Api/appsettings.json`
+
+```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=DTI;Trusted_Connection=True;TrustServerCertificate=True;"
@@ -46,58 +50,37 @@ Arquivo: backend/DTI.Api/appsettings.json
   },
   "AllowedHosts": "*"
 }
+👉 Ajuste o Server= conforme sua instância:
 
+Server=localhost\\SQLEXPRESS (SQL Server Express)
 
-Ajuste Server= conforme sua instância:
+Server=localhost (SQL Server Developer / Full)
 
-Instância padrão local: Server=localhost
+Server=(localdb)\\MSSQLLocalDB (LocalDB)
 
-SQL Express: Server=localhost\\SQLEXPRESS
-
-LocalDB: Server=(localdb)\\MSSQLLocalDB
-
-Instância nomeada: Server=SEU-PC\\NOME
-
-Se precisar usuário/senha:
-Server=localhost;Database=DTI;User Id=sa;Password=SUASENHA;TrustServerCertificate=True;
-
-Backend — Configurar, Migrar e Rodar
-
-No diretório DTI/backend:
-
+🚀 Rodando o Backend
+1) Restaurar e compilar
+bash
+Copiar código
+cd backend
 dotnet build
-
-
-Criar/atualizar banco com EF (se já há migrations):
-
+2) Criar/atualizar banco com EF
+bash
+Copiar código
 dotnet ef database update -p DTI.Infrastructure -s DTI.Api
-
-
-Criar migration do zero (opcional):
-
-dotnet ef migrations add InitialCreate -p DTI.Infrastructure -s DTI.Api
-dotnet ef database update -p DTI.Infrastructure -s DTI.Api
-
-
-Rodar a API:
-
+3) Subir a API
+bash
+Copiar código
 dotnet run --project DTI.Api
-
-
-API: http://localhost:5206
+API: http://localhost:5206/api/Leads
 
 Swagger: http://localhost:5206/swagger
 
-Endpoint principal: http://localhost:5206/api/Leads
+🧪 Testando no Swagger
+Exemplo de POST /api/Leads (não inclua id nem dateCreated):
 
-Os “e-mails” fake de Accept são gravados em arquivos .txt em:
-backend/DTI.Api/Notifications/ (criados automaticamente na primeira aceitação).
-
-Testando pelo Swagger
-
-Abra http://localhost:5206/swagger e use este JSON no POST /api/Leads
-(não envie id nem dateCreated):
-
+json
+Copiar código
 {
   "category": "Dev ;)",
   "contactFirstName": "Rafael",
@@ -110,33 +93,28 @@ Abra http://localhost:5206/swagger e use este JSON no POST /api/Leads
   "suburb": "BH",
   "status": "Pendente"
 }
+Endpoints principais
+GET /api/Leads → todos
 
-Listar Leads
+GET /api/Leads?status=Pendente → convidados
 
-GET /api/Leads — todos
+GET /api/Leads?status=Aceito → aceitos
 
-GET /api/Leads?status=Pendente — convidados
+GET /api/Leads?status=Recusado → recusados
 
-GET /api/Leads?status=Aceito — aceitos
+PUT /api/Leads/{id}/accept → aceita (aplica desconto e cria notificação .txt)
 
-GET /api/Leads?status=Recusado — recusados
+PUT /api/Leads/{id}/decline → recusa
 
-Accept / Decline
+Notificações ficam em:
+backend/DTI.Api/Notifications/*.txt
 
-PUT /api/Leads/{id}/accept
-
-Se price > 500 ⇒ aplica 10% de desconto
-
-Registra “e-mail” fake em arquivo .txt
-
-PUT /api/Leads/{id}/decline
-
-Frontend (React)
-
-Configurar base da API:
-
+🎨 Frontend (React)
+1) Configurar API base
 Arquivo: frontend/src/services/api.js
 
+javascript
+Copiar código
 import axios from "axios";
 
 const api = axios.create({
@@ -144,23 +122,25 @@ const api = axios.create({
 });
 
 export default api;
-
-
-Instalar e rodar:
-
+2) Instalar dependências e rodar
+bash
+Copiar código
 cd frontend
 npm install
 npm start
+App disponível em: http://localhost:3000
 
+Aba Invited lista leads status = "Pendente".
 
-App: http://localhost:3000
+Botões Accept / Decline atualizam o backend.
 
-Aba Invited lista status = "Pendente" e mostra botões Accept / Decline
+Aba Accepted lista leads aceitos (com extras: nome completo, telefone, email).
 
-Aba Accepted lista aceitos (exibe também nome completo, telefone, email)
+🔧 Exemplo via cURL
+PowerShell (Windows):
 
-Exemplos via cURL
-PowerShell (Windows) — use aspas duplas e escape com \"
+powershell
+Copiar código
 curl -Method POST `
   -Uri "http://localhost:5206/api/Leads" `
   -Headers @{ "Content-Type" = "application/json" } `
@@ -176,8 +156,10 @@ curl -Method POST `
     \"suburb\":\"BH\",
     \"status\":\"Pendente\"
   }"
+Linux/macOS:
 
-Git Bash / Linux / macOS
+bash
+Copiar código
 curl -X POST "http://localhost:5206/api/Leads" \
   -H "Content-Type: application/json" \
   -d '{
@@ -192,26 +174,17 @@ curl -X POST "http://localhost:5206/api/Leads" \
     "suburb":"BH",
     "status":"Pendente"
   }'
+✅ Testes
+No diretório backend/:
 
-
-Accept / Decline:
-
-curl -X PUT "http://localhost:5206/api/Leads/1/accept"
-curl -X PUT "http://localhost:5206/api/Leads/1/decline"
-
-Testes
-
-No diretório DTI/backend:
-
+bash
+Copiar código
 dotnet test
+Saída esperada: todos os testes aprovados.
 
+🐛 Problemas comuns
+Página React vazia: confirme que a API está rodando em http://localhost:5206 e que frontend/src/services/api.js tem baseURL: "http://localhost:5206/api".
 
-Saída esperada: testes passando (criação/listagem de lead em memória).
+CORS / Network Error: reinicie o backend; veja se o Program.cs habilita CORS.
 
-Problemas comuns
-
-Página React vazia: confirme que a API está em http://localhost:5206 e o frontend/src/services/api.js usa baseURL: "http://localhost:5206/api".
-
-CORS / Network Error: reinicie o backend; confira Program.cs e o Swagger; verifique firewall/antivírus.
-
-404 em / do backend: a API não tem HTML em / — use /swagger ou /api/Leads.
+404 em / do backend: a API não tem página HTML em /, use /swagger ou /api/Leads.
