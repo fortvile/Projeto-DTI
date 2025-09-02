@@ -24,7 +24,7 @@ Projeto fullstack simples para gerenciar **leads** com abas **Invited** e **Acce
 
 ⚙️ Configuração do Banco de Dados
 
-Arquivo: backend/DTI.Api/appsettings.json
+Arquivo: **backend/DTI.Api/appsettings.json**
 
 Copia o código abaixo e coloca no arquivo json em cima.
 
@@ -41,7 +41,7 @@ Copia o código abaixo e coloca no arquivo json em cima.
 
 👉 Ajuste o Server= conforme sua instância do SQL Server:
 
-Server=localhost\\SQLEXPRESS → SQL Server Express
+**Server=localhost\\SQLEXPRESS → SQL Server Express**
 (No caso, foi usado o SQLEXPRESS nessa aplicação)
 
 Server=localhost → SQL Server Developer / Full
@@ -54,10 +54,10 @@ cd backend
 dotnet build
 
 2) Criar/atualizar banco com EF:
-dotnet ef database update -p DTI.Infrastructure -s DTI.Api
+**dotnet ef database update -p DTI.Infrastructure -s DTI.Api**
 
 3) Subir a API:
-dotnet run --project DTI.Api
+**dotnet run --project DTI.Api**
 
 
 API: http://localhost:5206/api/Leads
@@ -103,9 +103,11 @@ backend/DTI.Api/Notifications/*.txt
 🎨 Frontend (React)
 1) Configurar API base
 
+Abra outro terminal.
+
 Arquivo: frontend/src/services/api.js
 
-import axios from "axios";
+**import axios from "axios";**
 
 const api = axios.create({
   baseURL: "http://localhost:5206/api" // NÃO inclua /leads aqui
@@ -114,12 +116,12 @@ const api = axios.create({
 export default api;
 
 2) Instalar dependências e rodar
-cd frontend
+**cd frontend
 npm install
-npm start
+npm start**
 
 
-App disponível em: http://localhost:3000
+**App disponível em: http://localhost:3000**
 (O react usa como porta padrão a 3000)
 
 Aba Invited → lista leads status = "Pendente".
@@ -166,7 +168,7 @@ curl -X POST "http://localhost:5206/api/Leads" \
 
 No diretório backend/:
 
-dotnet test
+**dotnet test**
 
 
 Saída esperada: todos os testes aprovados.
