@@ -9,18 +9,6 @@ Projeto fullstack simples para gerenciar **leads** com abas **Invited** e **Acce
   - **Accept**: muda status para **Aceito**; se `price > 500`, aplica **10% de desconto**; registra notificação "fake email" em arquivo `.txt`.
   - **Decline**: muda status para **Recusado**.
 
----
-
-## 📂 Estrutura de Pastas
-
-DTI/
-├─ backend/
-│ ├─ DTI.Api/ # Web API (controllers, Program.cs, Swagger)
-│ ├─ DTI.Domain/ # Entidades (Lead)
-│ ├─ DTI.Infrastructure # DbContext, EF Core, Migrations
-│ └─ DTI.Tests/ # Testes xUnit
-└─ frontend/ # React (CRA)
-
 
 ---
 
