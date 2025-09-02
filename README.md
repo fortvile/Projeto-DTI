@@ -53,10 +53,10 @@ Server=(localdb)\\MSSQLLocalDB → LocalDB
 cd backend
 dotnet build
 
-2) Criar/atualizar banco com EF
+2) Criar/atualizar banco com EF:
 dotnet ef database update -p DTI.Infrastructure -s DTI.Api
 
-3) Subir a API
+3) Subir a API:
 dotnet run --project DTI.Api
 
 
