@@ -42,6 +42,7 @@ Copia o código abaixo e coloca no arquivo json em cima.
 👉 Ajuste o Server= conforme sua instância do SQL Server:
 
 Server=localhost\\SQLEXPRESS → SQL Server Express
+(No caso, foi usado o SQLEXPRESS nessa aplicação)
 
 Server=localhost → SQL Server Developer / Full
 
