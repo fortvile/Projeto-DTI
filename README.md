@@ -26,6 +26,8 @@ Projeto fullstack simples para gerenciar **leads** com abas **Invited** e **Acce
 
 Arquivo: backend/DTI.Api/appsettings.json
 
+Copia o código abaixo e coloca no arquivo json em cima.
+
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost\\SQLEXPRESS;Database=DTI;Trusted_Connection=True;TrustServerCertificate=True;"
