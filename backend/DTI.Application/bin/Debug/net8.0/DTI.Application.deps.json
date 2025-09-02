@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "DTI.Application/1.0.0": {
+        "dependencies": {
+          "DTI.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DTI.Application.dll": {}
+        }
+      },
+      "DTI.Domain/1.0.0": {
+        "runtime": {
+          "DTI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DTI.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DTI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

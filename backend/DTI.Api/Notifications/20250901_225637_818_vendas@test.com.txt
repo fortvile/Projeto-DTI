@@ -1,0 +1,10 @@
+TO: vendas@test.com
+SUBJECT: Lead #4 aceito
+
+O lead 'Rafael Vilefort' (categoria: Dev ;)) foi ACEITO.
+Preço final: R$ 0,00
+Descrição: Candidato à estágio
+Suburb: BH
+Telefone: (31) 99373-8307
+Email: rafaelvilefort@gmail.com
+Data: 01/09/2025 19:56

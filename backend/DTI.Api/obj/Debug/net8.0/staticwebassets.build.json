@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0yAFkqEybK5DdoUfU4bvwq7pnvWYcEzPD9r2bBfOF9E=",
+  "Source": "DTI.Api",
+  "BasePath": "_content/DTI.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

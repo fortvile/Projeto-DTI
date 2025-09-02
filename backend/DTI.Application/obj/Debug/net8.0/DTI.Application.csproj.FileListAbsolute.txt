@@ -1,0 +1,15 @@
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\bin\Debug\net8.0\DTI.Application.deps.json
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\bin\Debug\net8.0\DTI.Application.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\bin\Debug\net8.0\DTI.Application.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\bin\Debug\net8.0\DTI.Domain.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\bin\Debug\net8.0\DTI.Domain.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.csproj.AssemblyReference.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.AssemblyInfoInputs.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.AssemblyInfo.cs
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.csproj.CoreCompileInputs.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Appl.2A84639B.Up2Date
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\refint\DTI.Application.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\DTI.Application.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Application\obj\Debug\net8.0\ref\DTI.Application.dll

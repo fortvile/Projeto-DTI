@@ -1,0 +1,10 @@
+TO: vendas@test.com
+SUBJECT: Lead #2 aceito
+
+O lead 'Rafael Pereira' (categoria: Software) foi ACEITO.
+Preço final: R$ 900,45
+Descrição: Lead para software
+Suburb: Centro
+Telefone: 123456789
+Email: rafael@example.com
+Data: 30/08/2025 01:18

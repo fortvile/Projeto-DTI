@@ -1,0 +1,29 @@
+/* src/components/Tabs.css */
+.tabs {
+  display: flex;
+  gap: 8px;
+  background: transparent;
+  margin-bottom: 16px;
+}
+
+.tab {
+  flex: 1;
+  background: rgba(255,255,255,0.6);
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 12px 10px;
+  font-weight: 800;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #7a4a00;
+  transition: background 0.15s ease, transform 0.05s ease, opacity 0.15s ease;
+}
+
+.tab:active {
+  transform: translateY(1px);
+}
+
+.tab.active {
+  background: #ffde99;
+  border-color: rgba(0,0,0,0.1);
+  color: #1e1e1e;
+}

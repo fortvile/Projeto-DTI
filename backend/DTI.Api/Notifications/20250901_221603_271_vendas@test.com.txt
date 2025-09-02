@@ -1,0 +1,10 @@
+TO: vendas@test.com
+SUBJECT: Lead #3 aceito
+
+O lead 'Ana Silva' (categoria: Hardware) foi ACEITO.
+Preço final: R$ 2.250,68
+Descrição: Lead para hardware
+Suburb: Jardim
+Telefone: 987654321
+Email: ana@example.com
+Data: 30/08/2025 01:18

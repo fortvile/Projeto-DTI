@@ -1,0 +1,86 @@
+.leads-page {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  color: #555;
+  transition: 0.2s;
+  border-bottom: 3px solid transparent;
+}
+
+.tabs button:hover {
+  color: #ff6600;
+}
+
+.tabs button.active {
+  color: #ff6600;
+  border-bottom: 3px solid #ff6600;
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+body {
+  background: yellow;
+}
+
+h2 {
+  color: red;
+}
+
+/* seção de contato (Accepted) */
+.lead-sep {
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+  margin: 12px 0 8px;
+}
+
+.lead-contact {
+  display: grid;
+  gap: 6px;
+}
+
+.contact-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  column-gap: 8px;
+  align-items: center;
+  font-size: 14px;
+}
+
+.contact-label {
+  color: #7a7a7a;
+  font-weight: 600;
+}
+
+.contact-value {
+  color: #1e1e1e;
+  font-weight: 600;
+}
+
+.contact-link {
+  color: #0b63bd;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}

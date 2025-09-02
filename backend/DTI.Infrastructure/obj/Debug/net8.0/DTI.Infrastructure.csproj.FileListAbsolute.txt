@@ -1,0 +1,17 @@
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Infrastructure.deps.json
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Infrastructure.runtimeconfig.json
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Infrastructure.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Infrastructure.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Domain.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\bin\Debug\net8.0\DTI.Domain.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.AssemblyInfo.cs
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infr.21E2DBC9.Up2Date
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\refint\DTI.Infrastructure.dll
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.pdb
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\DTI.Infrastructure.genruntimeconfig.cache
+C:\Users\rafae\OneDrive\Área de Trabalho\DTI\backend\DTI.Infrastructure\obj\Debug\net8.0\ref\DTI.Infrastructure.dll
