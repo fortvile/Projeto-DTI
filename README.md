@@ -21,8 +21,6 @@ DTI/
 │ └─ DTI.Tests/ # Testes xUnit
 └─ frontend/ # React (CRA)
 
-yaml
-Copiar código
 
 ---
 
@@ -61,16 +59,16 @@ Server=(localdb)\\MSSQLLocalDB (LocalDB)
 🚀 Rodando o Backend
 1) Restaurar e compilar
 bash
-Copiar código
+
 cd backend
 dotnet build
 2) Criar/atualizar banco com EF
 bash
-Copiar código
+
 dotnet ef database update -p DTI.Infrastructure -s DTI.Api
 3) Subir a API
 bash
-Copiar código
+
 dotnet run --project DTI.Api
 API: http://localhost:5206/api/Leads
 
@@ -80,7 +78,7 @@ Swagger: http://localhost:5206/swagger
 Exemplo de POST /api/Leads (não inclua id nem dateCreated):
 
 json
-Copiar código
+
 {
   "category": "Dev ;)",
   "contactFirstName": "Rafael",
@@ -114,7 +112,7 @@ backend/DTI.Api/Notifications/*.txt
 Arquivo: frontend/src/services/api.js
 
 javascript
-Copiar código
+
 import axios from "axios";
 
 const api = axios.create({
@@ -124,7 +122,7 @@ const api = axios.create({
 export default api;
 2) Instalar dependências e rodar
 bash
-Copiar código
+
 cd frontend
 npm install
 npm start
@@ -140,7 +138,7 @@ Aba Accepted lista leads aceitos (com extras: nome completo, telefone, email).
 PowerShell (Windows):
 
 powershell
-Copiar código
+
 curl -Method POST `
   -Uri "http://localhost:5206/api/Leads" `
   -Headers @{ "Content-Type" = "application/json" } `
@@ -159,7 +157,7 @@ curl -Method POST `
 Linux/macOS:
 
 bash
-Copiar código
+
 curl -X POST "http://localhost:5206/api/Leads" \
   -H "Content-Type: application/json" \
   -d '{
@@ -178,7 +176,7 @@ curl -X POST "http://localhost:5206/api/Leads" \
 No diretório backend/:
 
 bash
-Copiar código
+
 dotnet test
 Saída esperada: todos os testes aprovados.
 
